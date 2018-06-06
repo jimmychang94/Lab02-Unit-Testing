@@ -113,16 +113,18 @@ namespace Lab02_Unit_Testing
         // This method holds all the other aspects of withdrawing money.
         static void WithdrawText ()
         {
-            double number;
+            double number = -1;
             Console.WriteLine("How much money do you want to withdraw?");
             try
             {
-                number = Double.Parse(Console.ReadLine());
+                number = ExceptionHandling();
             }
             catch (Exception)
             {
-                number = -1;
+                Console.WriteLine("I'm sorry, I didn't understand that.");
             }
+            finally
+            {
             // This if/else statment uses the boolean that is returned from the Withdraw method as a means of finding whether the withdraw worked or not.
             if (Withdraw(number))
             {
@@ -132,6 +134,8 @@ namespace Lab02_Unit_Testing
             }
             else
                 Console.WriteLine("Invalid Withdrawal");
+
+            }
         }
 
         // This acts the same as Withdraw but the if statement only needs the value to be greater than 0.
@@ -147,15 +151,15 @@ namespace Lab02_Unit_Testing
 
         static void DepositText ()
         {
-            double number;
+            double number = -1;
             Console.WriteLine("How much money do you want to deposit?");
             try
             {
-                number = Double.Parse(Console.ReadLine());
+                number = ExceptionHandling();
             }
             catch (Exception)
             {
-                number = -1;
+                Console.WriteLine("I'm sorry, I didn't catch that.");
             }
             if (Deposit(number))
             {
@@ -164,6 +168,19 @@ namespace Lab02_Unit_Testing
             }
             else
                 Console.WriteLine("Invalid Deposit");
+        }
+
+        static double ExceptionHandling()
+        {
+            double number;
+            try
+            {
+                return number = Double.Parse(Console.ReadLine());
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         // I didn't really need to make this method but by the time I noticed I had already made it.
