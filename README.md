@@ -21,5 +21,5 @@ Here's a screenshot of the application:
 # Resources
 I used these resources to complete this application:  
 Amanda's lecture  
-["Queue<T>"](https://msdn.microsoft.com/en-us/library/t249c2y7(v=vs.110).aspx)  
+[Queue\<T\>](https://msdn.microsoft.com/en-us/library/t249c2y7(v=vs.110).aspx)  
 [Fish](http://www.ascii-art.de/ascii/def/fish.txt)
